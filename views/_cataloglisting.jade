@@ -1,0 +1,4 @@
+each catalog in catalogs
+	li
+		input(type='hidden', value=catalog._id || '')
+		label #{catalog.name || ''}
