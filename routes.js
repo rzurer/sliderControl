@@ -7,7 +7,7 @@ function initialize(app, model) {
         stamp = model.stamp.getStamp(userId, id, function (stamp) {
             model.catalog.getAllCatalogs(function (catalogs) {
                 res.render('identifiers', {stamp: stamp, catalogs : catalogs});
-           });
+            });
         });
     });
 }

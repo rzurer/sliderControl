@@ -67,9 +67,9 @@ exports.identifiers = function (slider, common) {
 			slider.ready(controls.sliderControls, function () {
 				if (callback) {
 					callback();
-				}				
+				}
 				onNavigate();
-			});	
+			});
 		},
 		setCatalogToDefault : function () {
 			var index, identifier;

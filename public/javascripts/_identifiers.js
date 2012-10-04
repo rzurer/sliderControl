@@ -15,11 +15,11 @@ var initializeIdentifiers = function (stamp) {
 				getDefaultCatalogName : function (defaultCatalogId) {
 					return "Scott";
 				},
-				getCatalogIds : function () {			
+				getCatalogIds : function () {
 					return $('li > input').map(function () {
 						return $(this).val();
 					});
-				},		
+				},
 				getCatalogId: function () {},
 				sliderControls : {
 					ul : $('#catalogSlider > ul'),
@@ -32,19 +32,19 @@ var initializeIdentifiers = function (stamp) {
 				var currentindex = slider.getCurrentIndex();
 				$('#catalogSlider > ul').children('li').removeClass('active');
 				$($('#catalogSlider > ul').children('li')[currentindex]).addClass('active');
-			}
+			};
 		stamp.getCurrentIdentifiers = function () {
-			var identifier,
+			var identifier, i,
 				activeCatalogId = $('li.active > input').val();
-			for (var i = 0; i < stamp.identifiers.length; i += 1) {
+			for (i = 0; i < stamp.identifiers.length; i += 1) {
 				identifier = stamp.identifiers[i];
 				if (identifier.catalog === activeCatalogId) {
 					return { catalogNumber : identifier.value, watermark : identifier.wmk, catalogId : activeCatalogId };
 				}
-			};
+			}
 			return { catalogNumber : null, watermark : null, catalogId : activeCatalogId };
 		};
-  		identifiers.ready(controls, stamp, callback);
+		identifiers.ready(controls, stamp, callback);
 		identifiers.setCatalogToDefault();
 	});
 };
