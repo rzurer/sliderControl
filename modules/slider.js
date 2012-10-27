@@ -3,12 +3,12 @@ exports.slider = function (common) {
 	var list, items, prev, next, currentindex, goToCallback,
 		initializeControls = function (controls) {
 			list = controls.ul;
-			items = controls.listItems;
+			items = controls.items;
 			prev = controls.prev;
 			next = controls.next;
 		},
 		getItemCount = function () {
-			return items.length;
+			return items ? items.length : 0;
 		},
 		getItemClientWidth = function () {
 			return getItemCount() === 0 ? 0 : items[0].clientWidth;
@@ -29,8 +29,7 @@ exports.slider = function (common) {
 					currentindex += 1;
 					goTo();
 				};
-			common.disableControl(prev);
-			common.disableControl(next);
+			common.disableControls([prev, next]);
 			if (currentindex === getItemCount() - 1) {
 				common.enableControl(prev, goToPrev);
 			}
@@ -54,10 +53,19 @@ exports.slider = function (common) {
 				setListWidth();
 				goTo();
 			},
+			getCurrentIndex : function () {
+				return currentindex;
+			},
+			isEmpty : function () {
+				return !items || items.length === 0;
+			},
 			getActiveItem : function () {
 				return items[currentindex];
+			},
+			navigateTo : function (index) {
+				currentindex = index;
+				goTo();
 			}
-
 		};
 	return result;
 };

@@ -5,7 +5,7 @@ var initializeSlider = function () {
 		var controls, callback, slider;
 		controls = {
 			ul : $('#catalogSlider > ul'),
-			listItems : $('#catalogSlider > ul').children('li'),
+			items : $('#catalogSlider > ul').children('li'),
 			next : $('#nxt'),
 			prev : $('#prv')
 		};
