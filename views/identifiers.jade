@@ -1,0 +1,25 @@
+extends layout
+
+block content
+		.slider-container
+			input#currentCatalogId(type='hidden')
+			.catalog
+				label Catalog:
+				input#defaultcatalog(type='checkbox')	
+			#prv
+				img.goToPreviousCatalog(src='/images/previous.png')
+			#catalogSlider
+				ul
+					include _cataloglisting
+			#nxt
+				img.goToNextCatalog(src='/images/next.png')
+			.slidercontrols
+				label Cat # :
+				input#catalognumber.styled.catalognumber.addOrUpdateIdentifier(type='text')
+				
+			.watermark
+				label Wmk:
+				input#wmk.styled.addOrUpdateIdentifier(type='text')
+		script
+			stamp = !{JSON.stringify(stamp)};
+			initializeIdentifiers(stamp);
