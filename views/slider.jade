@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.slider-container
+		#prv
+			img.goToPreviousCatalog(src='/images/previous.png')
+		#slider
+			ul
+				include _cataloglisting
+		#nxt
+			img.goToNextCatalog(src='/images/next.png')
+		script
+			initialize();

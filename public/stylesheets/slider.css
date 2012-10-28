@@ -1,9 +1,9 @@
-#catalogSlider {
+#slider {
   width: 170px;
   height: 40px;
   overflow: hidden;
   float: left   ;}
-#catalogSlider > ul {
+#slider > ul {
   position: relative;
   -webkit-transition: 0.5s left;
   -moz-transition: 0.5s left;
@@ -16,19 +16,19 @@
   margin-right: 0px;
   margin: 0;
   padding: 0;}
-#catalogSlider > ul > li {
+#slider > ul > li {
   float: left;
   width: 170px;
   text-align: center;
   height: 40px;}
-#catalogSlider > ul > li > label {
+#slider > ul > li > label {
   float: left;
   margin-top: 13px;
   margin-left: 5px;
   margin-right: 5px;
   text-align: center;
   width: 150px;}
-#catalogSlider > ul > li > input {
+#slider > ul > li > input {
   width: 50px;}
 #nxt {
   width: 20px;
